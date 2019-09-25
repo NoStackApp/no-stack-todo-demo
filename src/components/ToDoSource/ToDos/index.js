@@ -1,7 +1,7 @@
 import React from 'react';
 import { Unit } from '@nostack/no-stack';
 import styled from 'styled-components';
-import flattenData  from '../../../flattenData';
+import { flattenData }  from '../../../flattenData';
 
 import ToDoCreationForm from '../ToDoCreationForm';
 import ToDo from '../ToDo';
@@ -61,4 +61,3 @@ function ToDos({ projectId }) {
   );
 }
 export default ToDos;
-

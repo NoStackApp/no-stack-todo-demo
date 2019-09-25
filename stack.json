@@ -1,1 +1,751 @@
-{"userClasses":{"user":{"name":"user","id":"7412a394-ecab-4768-9e6b-85cfdb02fd2d","samples":{"irnold4y":{"id":"6c542241-4ad4-4efa-90b0-5f61303ce95e","suffix":"Mod","owner":"irnold4y"},"user11":{"id":"035c5f90-f3e4-4fa2-9ed5-b0bde5c36cdb","suffix":"1","owner":"user11"},"user21":{"id":"751b5054-bf52-428f-b13b-8dd1321c22be","suffix":"2","owner":"user21"}}}},"sources":{"projectsForUser":{"const":"SOURCE_PROJECTS_FOR_USER_ID","props":{"queryBody":"{\n            id,\n            instance:  {\n                ...ProjectParts\n            },\n            children: [\n            \n    \n            ],\n             __typename: 'InstanceWithTypedChildren',\n        }`\n    ","typeRelationships":"[TYPE_PROJECT_ID]: null"},"name":"projectsForUser","tree":{"user":{"project":"multiple"},"project":{}},"selections":["project"],"constraints":{"projectsForUser":{"constraintType":"ID","type":"user","value":"__currentUser__"}},"connections":{"project":"toDoSource"},"owner":"user","selectionRoot":"project","root":"user","id":"d71cf853-b94a-4717-9545-8b84e915244a","queryTree":{"project":{}}},"toDoSource":{"const":"SOURCE_TO_DO_SOURCE_ID","props":{"queryBody":"{\n            id,\n            instance:  {\n                ...ToDoParts\n            },\n            children: [\n            \n    \n            ],\n             __typename: 'InstanceWithTypedChildren',\n        }`\n    ","typeRelationships":"[TYPE_TO_DO_ID]: {\n        [TYPE_IS_COMPLETED_ID]: null, [TYPE_STEPS_ID]: null\n    }"},"name":"toDoSource","tree":{"project":{"toDo":"multiple"},"toDo":{"isCompleted":"singleRequired","steps":"multiple"},"isCompleted":{},"steps":{}},"selections":["toDo","isCompleted","steps"],"constraints":{"toDoSource":{"constraintType":"ID","type":"project","value":"currentProjectId"}},"connections":{},"owner":"user","selectionRoot":"toDo","root":"project","id":"e456ace0-80bd-4668-a094-263b0e59be9a","queryTree":{"toDo":{"isCompleted":{},"steps":{}}}}},"types":{"user":{"const":"TYPE_USER_ID","name":"user","plural":"users","sources":{"projectsForUser":{"parentType":"","assnType":"","children":["project"]}},"id":"7412a394-ecab-4768-9e6b-85cfdb02fd2d","samples":{"irnold4y":{"id":"6c542241-4ad4-4efa-90b0-5f61303ce95e","suffix":"Mod","owner":"irnold4y"},"user11":{"id":"035c5f90-f3e4-4fa2-9ed5-b0bde5c36cdb","suffix":"1","owner":"user11"},"user21":{"id":"751b5054-bf52-428f-b13b-8dd1321c22be","suffix":"2","owner":"user21"}}},"project":{"const":"TYPE_PROJECT_ID","dataType":"string","name":"project","plural":"projects","sources":{"projectsForUser":{"parentType":"user","assnType":"multiple","children":[],"plural":"Projects"},"toDoSource":{"parentType":"","assnType":"","children":["toDo"]}},"id":"be9b6c45-a378-42d6-a25d-633b8388c8d9","samples":{"projectsForUser_project_Mod1":{"id":"53c99342-abef-480e-b473-c838cf3fa3e8","owner":"irnold4y","suffix":"Mod1"},"projectsForUser_project_11":{"id":"9f84c6f2-ae7b-4202-bf42-213cfd0e5ff0","owner":"user11","suffix":"11"},"projectsForUser_project_21":{"id":"550b185e-ff13-40e5-a1f7-2799e9d0bedc","owner":"user21","suffix":"21"},"projectsForUser_project_Mod2":{"id":"2fcf15f1-86a8-4e04-8109-5c657b9dcdcc","owner":"irnold4y","suffix":"Mod2"},"projectsForUser_project_12":{"id":"11d58dcc-a5cc-42b1-97bd-046e8a7c8d8f","owner":"user11","suffix":"12"},"projectsForUser_project_22":{"id":"8a7306be-e7fc-46a2-bf1b-495fa65d30a4","owner":"user21","suffix":"22"},"toDoSource_project_Mod":{"id":"76da0568-1b2d-43c4-bad4-fccc4a29c0a6","owner":"irnold4y","suffix":"Mod"},"toDoSource_project_1":{"id":"9254fada-bd93-4986-b55e-29cefd7829e8","owner":"user11","suffix":"1"},"toDoSource_project_2":{"id":"2a8daedd-9534-4c03-ad2b-a793a0c2e476","owner":"user21","suffix":"2"}}},"toDo":{"const":"TYPE_TO_DO_ID","dataType":"string","name":"toDo","plural":"toDos","sources":{"toDoSource":{"parentType":"project","assnType":"multiple","children":["isCompleted","steps"],"plural":"ToDos"}},"id":"021128a2-fcfc-48dd-b323-17cd34c587d1","samples":{"toDoSource_toDo_Mod11":{"id":"368cd307-e271-46ea-8102-fd613aae4fb7","owner":"irnold4y","suffix":"Mod11"},"toDoSource_toDo_111":{"id":"499ca99e-f16c-4e1e-9d6b-904fad43dac6","owner":"user11","suffix":"111"},"toDoSource_toDo_211":{"id":"4d350f52-10c3-42e9-a9f1-d6ac63da88a9","owner":"user21","suffix":"211"},"toDoSource_toDo_Mod21":{"id":"8b76c936-d3f0-478a-8b3d-c401e232e9c4","owner":"irnold4y","suffix":"Mod21"},"toDoSource_toDo_121":{"id":"d40696a1-81f9-4f9e-bdb5-aa6908bf3055","owner":"user11","suffix":"121"},"toDoSource_toDo_221":{"id":"9ab3cb9a-fe42-4baf-8474-3cbb2e1fa4e2","owner":"user21","suffix":"221"},"toDoSource_toDo_Mod1":{"id":"0e10b0d0-4fd2-4709-bca9-ad7a42b704b9","owner":"irnold4y","suffix":"Mod1"},"toDoSource_toDo_11":{"id":"c91bc8b7-6d5a-45dc-829b-64974dc8fcdb","owner":"user11","suffix":"11"},"toDoSource_toDo_21":{"id":"51f8276b-e54f-4c28-8df7-4a3bc02a8cc2","owner":"user21","suffix":"21"},"toDoSource_toDo_Mod12":{"id":"43a6e73e-ec03-4556-a6bc-8486a17fecc0","owner":"irnold4y","suffix":"Mod12"},"toDoSource_toDo_112":{"id":"ab9cf59e-e269-49d0-904e-e04393b4f168","owner":"user11","suffix":"112"},"toDoSource_toDo_212":{"id":"82c1607b-dd58-451f-9b06-0a1efceb2363","owner":"user21","suffix":"212"},"toDoSource_toDo_Mod22":{"id":"d8134036-d2b5-4169-a1c0-76d5b422a3e7","owner":"irnold4y","suffix":"Mod22"},"toDoSource_toDo_122":{"id":"3f00f951-b92f-4da3-b72a-02e32f3bd728","owner":"user11","suffix":"122"},"toDoSource_toDo_222":{"id":"543b78a0-3892-4277-bf4b-8eb58e0fe56d","owner":"user21","suffix":"222"},"toDoSource_toDo_Mod2":{"id":"eb71d276-298b-4348-8b69-8a927abbfcc7","owner":"irnold4y","suffix":"Mod2"},"toDoSource_toDo_12":{"id":"f6712b7e-7147-4318-9c08-ba8da3e03ffe","owner":"user11","suffix":"12"},"toDoSource_toDo_22":{"id":"7e968e0d-b807-4439-9061-648d1b544dd7","owner":"user21","suffix":"22"}}},"isCompleted":{"const":"TYPE_IS_COMPLETED_ID","dataType":"boolean","name":"isCompleted","plural":"isCompleteds","sources":{"toDoSource":{"parentType":"toDo","assnType":"singleRequired","children":[]}},"id":"674ad176-bc1c-47ae-a4c2-7169e55e80b3","samples":{"toDoSource_isCompleted_Mod11":{"id":"4b4bea72-ff88-4bb7-96c1-948a7c9ce7e3","owner":"irnold4y","suffix":"Mod11"},"toDoSource_isCompleted_111":{"id":"6318dac0-c01c-441d-b5e3-d5a0af99ea22","owner":"user11","suffix":"111"},"toDoSource_isCompleted_211":{"id":"630a4212-9d65-4f19-ba77-835d1ef38bfe","owner":"user21","suffix":"211"},"toDoSource_isCompleted_Mod21":{"id":"f6c28b11-f362-4fc5-8b53-26eefd341173","owner":"irnold4y","suffix":"Mod21"},"toDoSource_isCompleted_121":{"id":"2422a656-fdf8-48a3-9733-26f7dd714982","owner":"user11","suffix":"121"},"toDoSource_isCompleted_221":{"id":"acba7a16-7b44-4f75-94a0-bdc5379bfd1d","owner":"user21","suffix":"221"},"toDoSource_isCompleted_Mod1":{"id":"05167efd-35af-4f71-aafb-57226557371d","owner":"irnold4y","suffix":"Mod1"},"toDoSource_isCompleted_11":{"id":"d5100fe0-e2d1-4221-bd59-ff2c528fdfa0","owner":"user11","suffix":"11"},"toDoSource_isCompleted_21":{"id":"4893d125-3154-434b-866b-71457ebf4bb2","owner":"user21","suffix":"21"},"toDoSource_isCompleted_Mod12":{"id":"b06027df-eceb-4298-8940-bf0d20ad3d5d","owner":"irnold4y","suffix":"Mod12"},"toDoSource_isCompleted_112":{"id":"4f092f8b-4765-4801-a8b6-e2683d45a2fb","owner":"user11","suffix":"112"},"toDoSource_isCompleted_212":{"id":"8100e984-e010-471a-8268-be03d5bce6ed","owner":"user21","suffix":"212"},"toDoSource_isCompleted_Mod22":{"id":"c0c67e46-036f-4d41-9e6c-accb8d363852","owner":"irnold4y","suffix":"Mod22"},"toDoSource_isCompleted_122":{"id":"476be174-ea9d-400c-92f0-27af9690ab2a","owner":"user11","suffix":"122"},"toDoSource_isCompleted_222":{"id":"d68d0b5c-549f-45f0-9ea4-1e09410a66d4","owner":"user21","suffix":"222"},"toDoSource_isCompleted_Mod2":{"id":"f5785b55-eaee-4f1a-b357-a8e5befbe193","owner":"irnold4y","suffix":"Mod2"},"toDoSource_isCompleted_12":{"id":"a73a1366-9d57-467c-85c5-ffd0e38c769b","owner":"user11","suffix":"12"},"toDoSource_isCompleted_22":{"id":"2a621f44-c24f-4755-a4d9-b912818f0407","owner":"user21","suffix":"22"}}},"steps":{"const":"TYPE_STEPS_ID","dataType":"string","name":"steps","plural":"steps","sources":{"toDoSource":{"parentType":"toDo","assnType":"multiple","children":[],"plural":"Steps"}},"id":"0251f227-9b84-4233-b7e8-f9ed79272842","samples":{"toDoSource_steps_Mod111":{"id":"ba2de779-1ea4-4e76-9628-7b8cec28d5bd","owner":"irnold4y","suffix":"Mod111"},"toDoSource_steps_1111":{"id":"5682b8cc-2fcf-495e-9cdb-6be95838d57b","owner":"user11","suffix":"1111"},"toDoSource_steps_2111":{"id":"0cd20eb4-820d-42b7-857b-85013ba731c0","owner":"user21","suffix":"2111"},"toDoSource_steps_Mod211":{"id":"4c6e1807-c77b-41f0-80fc-2ad0c1837b80","owner":"irnold4y","suffix":"Mod211"},"toDoSource_steps_1211":{"id":"4cc507fd-7da4-4cf1-80fd-ba4a7890cd6b","owner":"user11","suffix":"1211"},"toDoSource_steps_2211":{"id":"fe6f19ef-5591-435c-bbf0-503201174528","owner":"user21","suffix":"2211"},"toDoSource_steps_Mod11":{"id":"a8dc245e-505d-4d13-b716-1f9c8dbb428e","owner":"irnold4y","suffix":"Mod11"},"toDoSource_steps_111":{"id":"386ebf9c-e719-459b-a941-1a18459bfd27","owner":"user11","suffix":"111"},"toDoSource_steps_211":{"id":"f415d742-0e96-4fef-b8ac-db8cbd9e6af8","owner":"user21","suffix":"211"},"toDoSource_steps_Mod121":{"id":"1367c85e-dcce-4caa-a787-df973bb3540d","owner":"irnold4y","suffix":"Mod121"},"toDoSource_steps_1121":{"id":"e8b945d7-787e-4c8b-8509-ca20bfa66be2","owner":"user11","suffix":"1121"},"toDoSource_steps_2121":{"id":"c246cf5e-289a-44cb-b30b-6774564fa1c4","owner":"user21","suffix":"2121"},"toDoSource_steps_Mod221":{"id":"cb0ad812-892b-4a5a-b120-43aca91e31fb","owner":"irnold4y","suffix":"Mod221"},"toDoSource_steps_1221":{"id":"d3c0bc43-56d7-4ac9-87b1-a4d5c038fccf","owner":"user11","suffix":"1221"},"toDoSource_steps_2221":{"id":"0817c4ba-9ebc-4950-a889-7e82ad893a86","owner":"user21","suffix":"2221"},"toDoSource_steps_Mod21":{"id":"70276c95-b1c4-4f48-98a2-94746aad8cc1","owner":"irnold4y","suffix":"Mod21"},"toDoSource_steps_121":{"id":"bc3f424f-bf7d-462a-9ad8-3be0dfed382c","owner":"user11","suffix":"121"},"toDoSource_steps_221":{"id":"df510cff-dd7a-41e4-8aff-af9b7b6da921","owner":"user21","suffix":"221"},"toDoSource_steps_Mod112":{"id":"516291e8-1da0-4f07-84f9-a32cec80f91b","owner":"irnold4y","suffix":"Mod112"},"toDoSource_steps_1112":{"id":"01e41065-8447-4e5a-80d1-af1cc2186a67","owner":"user11","suffix":"1112"},"toDoSource_steps_2112":{"id":"d470ce7a-9f91-4870-a103-6d10c2c2324b","owner":"user21","suffix":"2112"},"toDoSource_steps_Mod212":{"id":"2c6d16b5-72cb-4ea5-8e5d-ae987462486c","owner":"irnold4y","suffix":"Mod212"},"toDoSource_steps_1212":{"id":"76d54511-89a9-4af8-8e48-d3551665882f","owner":"user11","suffix":"1212"},"toDoSource_steps_2212":{"id":"75642de4-9b4f-422c-bae8-a54dc5fb73a6","owner":"user21","suffix":"2212"},"toDoSource_steps_Mod12":{"id":"f0ea9dee-b7e4-41c6-897a-1f855737b79e","owner":"irnold4y","suffix":"Mod12"},"toDoSource_steps_112":{"id":"261f79c3-3b05-4dac-b9ce-e76ffab7eb8c","owner":"user11","suffix":"112"},"toDoSource_steps_212":{"id":"25d983d2-3ff7-4e39-8421-7092395a15af","owner":"user21","suffix":"212"},"toDoSource_steps_Mod122":{"id":"bf286d4b-ab32-4dae-ae11-d02ac540706d","owner":"irnold4y","suffix":"Mod122"},"toDoSource_steps_1122":{"id":"3783a31f-3646-4915-a835-1ec9cdc4fec1","owner":"user11","suffix":"1122"},"toDoSource_steps_2122":{"id":"ccedbd7f-1253-411e-a255-6300fb34d38e","owner":"user21","suffix":"2122"},"toDoSource_steps_Mod222":{"id":"820f47ea-59c1-4e30-ad48-4831ce6a26d1","owner":"irnold4y","suffix":"Mod222"},"toDoSource_steps_1222":{"id":"f63723ab-1e32-4139-b8e3-122896630d3b","owner":"user11","suffix":"1222"},"toDoSource_steps_2222":{"id":"4751537c-c66f-40cb-93fa-d322791f0ca6","owner":"user21","suffix":"2222"},"toDoSource_steps_Mod22":{"id":"b9d1d315-2643-4b8a-91f6-df83b5d00ae5","owner":"irnold4y","suffix":"Mod22"},"toDoSource_steps_122":{"id":"3fb88e8b-2a08-4b0f-bbdc-a08087049c9e","owner":"user11","suffix":"122"},"toDoSource_steps_222":{"id":"dab9310f-368d-4051-9d97-02620ef2fc79","owner":"user21","suffix":"222"}}}},"actions":{"CREATE_INSTANCE":{"projectsForUser__project_create":{"const":"CREATE_PROJECT_FOR_PROJECTS_FOR_USER_ACTION_ID","actionName":"create project for projectsForUser","userClass":"user","actionType":"CREATE_INSTANCE","type":"project","parentType":"user","source":"projectsForUser","id":"f4d95d04-8526-47c3-9413-ef1350f760dc"},"toDoSource__toDo_create":{"const":"CREATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"create toDo for toDoSource","userClass":"user","actionType":"CREATE_INSTANCE","type":"toDo","parentType":"project","source":"toDoSource","id":"1aa91042-60c9-434a-b3cf-d64eb420dd95"},"toDoSource__isCompleted_create":{"const":"CREATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"create isCompleted for toDoSource","userClass":"user","actionType":"CREATE_INSTANCE","type":"isCompleted","parentType":"toDo","source":"toDoSource","id":"818f2fa5-aadf-4c5a-99d9-1313acb29337"},"toDoSource__steps_create":{"const":"CREATE_STEPS_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"create steps for toDoSource","userClass":"user","actionType":"CREATE_INSTANCE","type":"steps","parentType":"toDo","source":"toDoSource","id":"cd7b4bab-a35d-4d6d-9ac8-7915f6087730"}},"UPDATE_INSTANCE":{"projectsForUser__project_update":{"const":"UPDATE_PROJECT_FOR_PROJECTS_FOR_USER_ACTION_ID","actionName":"update project for projectsForUser","userClass":"user","actionType":"UPDATE_INSTANCE","type":"project","source":"projectsForUser","id":"24da762a-bfcf-4562-8fcd-8f84ed6d3390"},"toDoSource__toDo_update":{"const":"UPDATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"update toDo for toDoSource","userClass":"user","actionType":"UPDATE_INSTANCE","type":"toDo","source":"toDoSource","id":"72a7e2df-2b14-48bb-b5fd-469ff2305806"},"toDoSource__isCompleted_update":{"const":"UPDATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"update isCompleted for toDoSource","userClass":"user","actionType":"UPDATE_INSTANCE","type":"isCompleted","source":"toDoSource","id":"394c29fe-92e3-4116-8988-382850776873"},"toDoSource__steps_update":{"const":"UPDATE_STEPS_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"update steps for toDoSource","userClass":"user","actionType":"UPDATE_INSTANCE","type":"steps","source":"toDoSource","id":"05074d33-a5e8-4529-99cc-6e9bf3c33819"}},"DELETE_INSTANCE":{"projectsForUser__project_delete":{"const":"DELETE_PROJECT_FOR_PROJECTS_FOR_USER_ACTION_ID","actionName":"delete project for projectsForUser","userClass":"user","actionType":"DELETE_INSTANCE","type":"project","parentType":"user","source":"projectsForUser","id":"da26e2c1-9c8e-468b-b947-023287d3b4b6"},"toDoSource__toDo_delete":{"const":"DELETE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"delete toDo for toDoSource","userClass":"user","actionType":"DELETE_INSTANCE","type":"toDo","parentType":"project","source":"toDoSource","id":"4e44ac9f-0659-4938-a9c9-cbdddf394b8f"},"toDoSource__isCompleted_delete":{"const":"DELETE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"delete isCompleted for toDoSource","userClass":"user","actionType":"DELETE_INSTANCE","type":"isCompleted","parentType":"toDo","source":"toDoSource","id":"2b90a361-47c8-4c0b-a9dc-4d9a4b6c39b4"},"toDoSource__steps_delete":{"const":"DELETE_STEPS_FOR_TO_DO_SOURCE_ACTION_ID","actionName":"delete steps for toDoSource","userClass":"user","actionType":"DELETE_INSTANCE","type":"steps","parentType":"toDo","source":"toDoSource","id":"01a2d409-8ef4-4302-aed5-34ca04cd3e73"}}},"topSource":"projectsForUser","stack":{"stackId":"us-west-2_2r3HEQutH","moderator":{"id":"6c542241-4ad4-4efa-90b0-5f61303ce95e","name":"irnold4y"}}}
+{
+  "userClasses": {
+    "user": {
+      "name": "user",
+      "id": "7412a394-ecab-4768-9e6b-85cfdb02fd2d",
+      "samples": {
+        "irnold4y": {
+          "id": "6c542241-4ad4-4efa-90b0-5f61303ce95e",
+          "suffix": "Mod",
+          "owner": "irnold4y"
+        },
+        "user11": {
+          "id": "035c5f90-f3e4-4fa2-9ed5-b0bde5c36cdb",
+          "suffix": "1",
+          "owner": "user11"
+        },
+        "user21": {
+          "id": "751b5054-bf52-428f-b13b-8dd1321c22be",
+          "suffix": "2",
+          "owner": "user21"
+        }
+      }
+    }
+  },
+  "sources": {
+    "projectsForUser": {
+      "const": "SOURCE_PROJECTS_FOR_USER_ID",
+      "props": {
+        "queryBody": "{\n            id,\n            instance:  {\n                ...ProjectParts\n            },\n            children: [\n            \n    \n            ],\n             __typename: 'InstanceWithTypedChildren',\n        }`\n    ",
+        "typeRelationships": "[TYPE_PROJECT_ID]: null"
+      },
+      "name": "projectsForUser",
+      "tree": {
+        "user": {
+          "project": "multiple"
+        },
+        "project": {}
+      },
+      "selections": [
+        "project"
+      ],
+      "constraints": {
+        "projectsForUser": {
+          "constraintType": "ID",
+          "type": "user",
+          "value": "__currentUser__"
+        }
+      },
+      "connections": {
+        "project": "toDoSource"
+      },
+      "owner": "user",
+      "selectionRoot": "project",
+      "root": "user",
+      "id": "d71cf853-b94a-4717-9545-8b84e915244a",
+      "queryTree": {
+        "project": {}
+      }
+    },
+    "toDoSource": {
+      "const": "SOURCE_TO_DO_SOURCE_ID",
+      "props": {
+        "queryBody": "{\n            id,\n            instance:  {\n                ...ToDoParts\n            },\n            children: [\n            \n    \n            ],\n             __typename: 'InstanceWithTypedChildren',\n        }`\n    ",
+        "typeRelationships": "[TYPE_TO_DO_ID]: {\n        [TYPE_IS_COMPLETED_ID]: null, [TYPE_STEPS_ID]: null\n    }"
+      },
+      "name": "toDoSource",
+      "tree": {
+        "project": {
+          "toDo": "multiple"
+        },
+        "toDo": {
+          "isCompleted": "singleRequired",
+          "steps": "multiple"
+        },
+        "isCompleted": {},
+        "steps": {}
+      },
+      "selections": [
+        "toDo",
+        "isCompleted",
+        "steps"
+      ],
+      "constraints": {
+        "toDoSource": {
+          "constraintType": "ID",
+          "type": "project",
+          "value": "currentProjectId"
+        }
+      },
+      "connections": {},
+      "owner": "user",
+      "selectionRoot": "toDo",
+      "root": "project",
+      "id": "e456ace0-80bd-4668-a094-263b0e59be9a",
+      "queryTree": {
+        "toDo": {
+          "isCompleted": {},
+          "steps": {}
+        }
+      }
+    }
+  },
+  "types": {
+    "user": {
+      "const": "TYPE_USER_ID",
+      "name": "user",
+      "plural": "users",
+      "sources": {
+        "projectsForUser": {
+          "parentType": "",
+          "assnType": "",
+          "children": [
+            "project"
+          ]
+        }
+      },
+      "id": "7412a394-ecab-4768-9e6b-85cfdb02fd2d",
+      "samples": {
+        "irnold4y": {
+          "id": "6c542241-4ad4-4efa-90b0-5f61303ce95e",
+          "suffix": "Mod",
+          "owner": "irnold4y"
+        },
+        "user11": {
+          "id": "035c5f90-f3e4-4fa2-9ed5-b0bde5c36cdb",
+          "suffix": "1",
+          "owner": "user11"
+        },
+        "user21": {
+          "id": "751b5054-bf52-428f-b13b-8dd1321c22be",
+          "suffix": "2",
+          "owner": "user21"
+        }
+      }
+    },
+    "project": {
+      "const": "TYPE_PROJECT_ID",
+      "dataType": "string",
+      "name": "project",
+      "plural": "projects",
+      "sources": {
+        "projectsForUser": {
+          "parentType": "user",
+          "assnType": "multiple",
+          "children": [],
+          "plural": "Projects"
+        },
+        "toDoSource": {
+          "parentType": "",
+          "assnType": "",
+          "children": [
+            "toDo"
+          ]
+        }
+      },
+      "id": "be9b6c45-a378-42d6-a25d-633b8388c8d9",
+      "samples": {
+        "projectsForUser_project_Mod1": {
+          "id": "53c99342-abef-480e-b473-c838cf3fa3e8",
+          "owner": "irnold4y",
+          "suffix": "Mod1"
+        },
+        "projectsForUser_project_11": {
+          "id": "9f84c6f2-ae7b-4202-bf42-213cfd0e5ff0",
+          "owner": "user11",
+          "suffix": "11"
+        },
+        "projectsForUser_project_21": {
+          "id": "550b185e-ff13-40e5-a1f7-2799e9d0bedc",
+          "owner": "user21",
+          "suffix": "21"
+        },
+        "projectsForUser_project_Mod2": {
+          "id": "2fcf15f1-86a8-4e04-8109-5c657b9dcdcc",
+          "owner": "irnold4y",
+          "suffix": "Mod2"
+        },
+        "projectsForUser_project_12": {
+          "id": "11d58dcc-a5cc-42b1-97bd-046e8a7c8d8f",
+          "owner": "user11",
+          "suffix": "12"
+        },
+        "projectsForUser_project_22": {
+          "id": "8a7306be-e7fc-46a2-bf1b-495fa65d30a4",
+          "owner": "user21",
+          "suffix": "22"
+        },
+        "toDoSource_project_Mod": {
+          "id": "76da0568-1b2d-43c4-bad4-fccc4a29c0a6",
+          "owner": "irnold4y",
+          "suffix": "Mod"
+        },
+        "toDoSource_project_1": {
+          "id": "9254fada-bd93-4986-b55e-29cefd7829e8",
+          "owner": "user11",
+          "suffix": "1"
+        },
+        "toDoSource_project_2": {
+          "id": "2a8daedd-9534-4c03-ad2b-a793a0c2e476",
+          "owner": "user21",
+          "suffix": "2"
+        }
+      }
+    },
+    "toDo": {
+      "const": "TYPE_TO_DO_ID",
+      "dataType": "string",
+      "name": "toDo",
+      "plural": "toDos",
+      "sources": {
+        "toDoSource": {
+          "parentType": "project",
+          "assnType": "multiple",
+          "children": [
+            "isCompleted",
+            "steps"
+          ],
+          "plural": "ToDos"
+        }
+      },
+      "id": "021128a2-fcfc-48dd-b323-17cd34c587d1",
+      "samples": {
+        "toDoSource_toDo_Mod11": {
+          "id": "368cd307-e271-46ea-8102-fd613aae4fb7",
+          "owner": "irnold4y",
+          "suffix": "Mod11"
+        },
+        "toDoSource_toDo_111": {
+          "id": "499ca99e-f16c-4e1e-9d6b-904fad43dac6",
+          "owner": "user11",
+          "suffix": "111"
+        },
+        "toDoSource_toDo_211": {
+          "id": "4d350f52-10c3-42e9-a9f1-d6ac63da88a9",
+          "owner": "user21",
+          "suffix": "211"
+        },
+        "toDoSource_toDo_Mod21": {
+          "id": "8b76c936-d3f0-478a-8b3d-c401e232e9c4",
+          "owner": "irnold4y",
+          "suffix": "Mod21"
+        },
+        "toDoSource_toDo_121": {
+          "id": "d40696a1-81f9-4f9e-bdb5-aa6908bf3055",
+          "owner": "user11",
+          "suffix": "121"
+        },
+        "toDoSource_toDo_221": {
+          "id": "9ab3cb9a-fe42-4baf-8474-3cbb2e1fa4e2",
+          "owner": "user21",
+          "suffix": "221"
+        },
+        "toDoSource_toDo_Mod1": {
+          "id": "0e10b0d0-4fd2-4709-bca9-ad7a42b704b9",
+          "owner": "irnold4y",
+          "suffix": "Mod1"
+        },
+        "toDoSource_toDo_11": {
+          "id": "c91bc8b7-6d5a-45dc-829b-64974dc8fcdb",
+          "owner": "user11",
+          "suffix": "11"
+        },
+        "toDoSource_toDo_21": {
+          "id": "51f8276b-e54f-4c28-8df7-4a3bc02a8cc2",
+          "owner": "user21",
+          "suffix": "21"
+        },
+        "toDoSource_toDo_Mod12": {
+          "id": "43a6e73e-ec03-4556-a6bc-8486a17fecc0",
+          "owner": "irnold4y",
+          "suffix": "Mod12"
+        },
+        "toDoSource_toDo_112": {
+          "id": "ab9cf59e-e269-49d0-904e-e04393b4f168",
+          "owner": "user11",
+          "suffix": "112"
+        },
+        "toDoSource_toDo_212": {
+          "id": "82c1607b-dd58-451f-9b06-0a1efceb2363",
+          "owner": "user21",
+          "suffix": "212"
+        },
+        "toDoSource_toDo_Mod22": {
+          "id": "d8134036-d2b5-4169-a1c0-76d5b422a3e7",
+          "owner": "irnold4y",
+          "suffix": "Mod22"
+        },
+        "toDoSource_toDo_122": {
+          "id": "3f00f951-b92f-4da3-b72a-02e32f3bd728",
+          "owner": "user11",
+          "suffix": "122"
+        },
+        "toDoSource_toDo_222": {
+          "id": "543b78a0-3892-4277-bf4b-8eb58e0fe56d",
+          "owner": "user21",
+          "suffix": "222"
+        },
+        "toDoSource_toDo_Mod2": {
+          "id": "eb71d276-298b-4348-8b69-8a927abbfcc7",
+          "owner": "irnold4y",
+          "suffix": "Mod2"
+        },
+        "toDoSource_toDo_12": {
+          "id": "f6712b7e-7147-4318-9c08-ba8da3e03ffe",
+          "owner": "user11",
+          "suffix": "12"
+        },
+        "toDoSource_toDo_22": {
+          "id": "7e968e0d-b807-4439-9061-648d1b544dd7",
+          "owner": "user21",
+          "suffix": "22"
+        }
+      }
+    },
+    "isCompleted": {
+      "const": "TYPE_IS_COMPLETED_ID",
+      "dataType": "boolean",
+      "name": "isCompleted",
+      "plural": "isCompleteds",
+      "sources": {
+        "toDoSource": {
+          "parentType": "toDo",
+          "assnType": "singleRequired",
+          "children": []
+        }
+      },
+      "id": "674ad176-bc1c-47ae-a4c2-7169e55e80b3",
+      "samples": {
+        "toDoSource_isCompleted_Mod11": {
+          "id": "4b4bea72-ff88-4bb7-96c1-948a7c9ce7e3",
+          "owner": "irnold4y",
+          "suffix": "Mod11"
+        },
+        "toDoSource_isCompleted_111": {
+          "id": "6318dac0-c01c-441d-b5e3-d5a0af99ea22",
+          "owner": "user11",
+          "suffix": "111"
+        },
+        "toDoSource_isCompleted_211": {
+          "id": "630a4212-9d65-4f19-ba77-835d1ef38bfe",
+          "owner": "user21",
+          "suffix": "211"
+        },
+        "toDoSource_isCompleted_Mod21": {
+          "id": "f6c28b11-f362-4fc5-8b53-26eefd341173",
+          "owner": "irnold4y",
+          "suffix": "Mod21"
+        },
+        "toDoSource_isCompleted_121": {
+          "id": "2422a656-fdf8-48a3-9733-26f7dd714982",
+          "owner": "user11",
+          "suffix": "121"
+        },
+        "toDoSource_isCompleted_221": {
+          "id": "acba7a16-7b44-4f75-94a0-bdc5379bfd1d",
+          "owner": "user21",
+          "suffix": "221"
+        },
+        "toDoSource_isCompleted_Mod1": {
+          "id": "05167efd-35af-4f71-aafb-57226557371d",
+          "owner": "irnold4y",
+          "suffix": "Mod1"
+        },
+        "toDoSource_isCompleted_11": {
+          "id": "d5100fe0-e2d1-4221-bd59-ff2c528fdfa0",
+          "owner": "user11",
+          "suffix": "11"
+        },
+        "toDoSource_isCompleted_21": {
+          "id": "4893d125-3154-434b-866b-71457ebf4bb2",
+          "owner": "user21",
+          "suffix": "21"
+        },
+        "toDoSource_isCompleted_Mod12": {
+          "id": "b06027df-eceb-4298-8940-bf0d20ad3d5d",
+          "owner": "irnold4y",
+          "suffix": "Mod12"
+        },
+        "toDoSource_isCompleted_112": {
+          "id": "4f092f8b-4765-4801-a8b6-e2683d45a2fb",
+          "owner": "user11",
+          "suffix": "112"
+        },
+        "toDoSource_isCompleted_212": {
+          "id": "8100e984-e010-471a-8268-be03d5bce6ed",
+          "owner": "user21",
+          "suffix": "212"
+        },
+        "toDoSource_isCompleted_Mod22": {
+          "id": "c0c67e46-036f-4d41-9e6c-accb8d363852",
+          "owner": "irnold4y",
+          "suffix": "Mod22"
+        },
+        "toDoSource_isCompleted_122": {
+          "id": "476be174-ea9d-400c-92f0-27af9690ab2a",
+          "owner": "user11",
+          "suffix": "122"
+        },
+        "toDoSource_isCompleted_222": {
+          "id": "d68d0b5c-549f-45f0-9ea4-1e09410a66d4",
+          "owner": "user21",
+          "suffix": "222"
+        },
+        "toDoSource_isCompleted_Mod2": {
+          "id": "f5785b55-eaee-4f1a-b357-a8e5befbe193",
+          "owner": "irnold4y",
+          "suffix": "Mod2"
+        },
+        "toDoSource_isCompleted_12": {
+          "id": "a73a1366-9d57-467c-85c5-ffd0e38c769b",
+          "owner": "user11",
+          "suffix": "12"
+        },
+        "toDoSource_isCompleted_22": {
+          "id": "2a621f44-c24f-4755-a4d9-b912818f0407",
+          "owner": "user21",
+          "suffix": "22"
+        }
+      }
+    },
+    "steps": {
+      "const": "TYPE_STEPS_ID",
+      "dataType": "string",
+      "name": "steps",
+      "plural": "steps",
+      "sources": {
+        "toDoSource": {
+          "parentType": "toDo",
+          "assnType": "multiple",
+          "children": [],
+          "plural": "Steps"
+        }
+      },
+      "id": "0251f227-9b84-4233-b7e8-f9ed79272842",
+      "samples": {
+        "toDoSource_steps_Mod111": {
+          "id": "ba2de779-1ea4-4e76-9628-7b8cec28d5bd",
+          "owner": "irnold4y",
+          "suffix": "Mod111"
+        },
+        "toDoSource_steps_1111": {
+          "id": "5682b8cc-2fcf-495e-9cdb-6be95838d57b",
+          "owner": "user11",
+          "suffix": "1111"
+        },
+        "toDoSource_steps_2111": {
+          "id": "0cd20eb4-820d-42b7-857b-85013ba731c0",
+          "owner": "user21",
+          "suffix": "2111"
+        },
+        "toDoSource_steps_Mod211": {
+          "id": "4c6e1807-c77b-41f0-80fc-2ad0c1837b80",
+          "owner": "irnold4y",
+          "suffix": "Mod211"
+        },
+        "toDoSource_steps_1211": {
+          "id": "4cc507fd-7da4-4cf1-80fd-ba4a7890cd6b",
+          "owner": "user11",
+          "suffix": "1211"
+        },
+        "toDoSource_steps_2211": {
+          "id": "fe6f19ef-5591-435c-bbf0-503201174528",
+          "owner": "user21",
+          "suffix": "2211"
+        },
+        "toDoSource_steps_Mod11": {
+          "id": "a8dc245e-505d-4d13-b716-1f9c8dbb428e",
+          "owner": "irnold4y",
+          "suffix": "Mod11"
+        },
+        "toDoSource_steps_111": {
+          "id": "386ebf9c-e719-459b-a941-1a18459bfd27",
+          "owner": "user11",
+          "suffix": "111"
+        },
+        "toDoSource_steps_211": {
+          "id": "f415d742-0e96-4fef-b8ac-db8cbd9e6af8",
+          "owner": "user21",
+          "suffix": "211"
+        },
+        "toDoSource_steps_Mod121": {
+          "id": "1367c85e-dcce-4caa-a787-df973bb3540d",
+          "owner": "irnold4y",
+          "suffix": "Mod121"
+        },
+        "toDoSource_steps_1121": {
+          "id": "e8b945d7-787e-4c8b-8509-ca20bfa66be2",
+          "owner": "user11",
+          "suffix": "1121"
+        },
+        "toDoSource_steps_2121": {
+          "id": "c246cf5e-289a-44cb-b30b-6774564fa1c4",
+          "owner": "user21",
+          "suffix": "2121"
+        },
+        "toDoSource_steps_Mod221": {
+          "id": "cb0ad812-892b-4a5a-b120-43aca91e31fb",
+          "owner": "irnold4y",
+          "suffix": "Mod221"
+        },
+        "toDoSource_steps_1221": {
+          "id": "d3c0bc43-56d7-4ac9-87b1-a4d5c038fccf",
+          "owner": "user11",
+          "suffix": "1221"
+        },
+        "toDoSource_steps_2221": {
+          "id": "0817c4ba-9ebc-4950-a889-7e82ad893a86",
+          "owner": "user21",
+          "suffix": "2221"
+        },
+        "toDoSource_steps_Mod21": {
+          "id": "70276c95-b1c4-4f48-98a2-94746aad8cc1",
+          "owner": "irnold4y",
+          "suffix": "Mod21"
+        },
+        "toDoSource_steps_121": {
+          "id": "bc3f424f-bf7d-462a-9ad8-3be0dfed382c",
+          "owner": "user11",
+          "suffix": "121"
+        },
+        "toDoSource_steps_221": {
+          "id": "df510cff-dd7a-41e4-8aff-af9b7b6da921",
+          "owner": "user21",
+          "suffix": "221"
+        },
+        "toDoSource_steps_Mod112": {
+          "id": "516291e8-1da0-4f07-84f9-a32cec80f91b",
+          "owner": "irnold4y",
+          "suffix": "Mod112"
+        },
+        "toDoSource_steps_1112": {
+          "id": "01e41065-8447-4e5a-80d1-af1cc2186a67",
+          "owner": "user11",
+          "suffix": "1112"
+        },
+        "toDoSource_steps_2112": {
+          "id": "d470ce7a-9f91-4870-a103-6d10c2c2324b",
+          "owner": "user21",
+          "suffix": "2112"
+        },
+        "toDoSource_steps_Mod212": {
+          "id": "2c6d16b5-72cb-4ea5-8e5d-ae987462486c",
+          "owner": "irnold4y",
+          "suffix": "Mod212"
+        },
+        "toDoSource_steps_1212": {
+          "id": "76d54511-89a9-4af8-8e48-d3551665882f",
+          "owner": "user11",
+          "suffix": "1212"
+        },
+        "toDoSource_steps_2212": {
+          "id": "75642de4-9b4f-422c-bae8-a54dc5fb73a6",
+          "owner": "user21",
+          "suffix": "2212"
+        },
+        "toDoSource_steps_Mod12": {
+          "id": "f0ea9dee-b7e4-41c6-897a-1f855737b79e",
+          "owner": "irnold4y",
+          "suffix": "Mod12"
+        },
+        "toDoSource_steps_112": {
+          "id": "261f79c3-3b05-4dac-b9ce-e76ffab7eb8c",
+          "owner": "user11",
+          "suffix": "112"
+        },
+        "toDoSource_steps_212": {
+          "id": "25d983d2-3ff7-4e39-8421-7092395a15af",
+          "owner": "user21",
+          "suffix": "212"
+        },
+        "toDoSource_steps_Mod122": {
+          "id": "bf286d4b-ab32-4dae-ae11-d02ac540706d",
+          "owner": "irnold4y",
+          "suffix": "Mod122"
+        },
+        "toDoSource_steps_1122": {
+          "id": "3783a31f-3646-4915-a835-1ec9cdc4fec1",
+          "owner": "user11",
+          "suffix": "1122"
+        },
+        "toDoSource_steps_2122": {
+          "id": "ccedbd7f-1253-411e-a255-6300fb34d38e",
+          "owner": "user21",
+          "suffix": "2122"
+        },
+        "toDoSource_steps_Mod222": {
+          "id": "820f47ea-59c1-4e30-ad48-4831ce6a26d1",
+          "owner": "irnold4y",
+          "suffix": "Mod222"
+        },
+        "toDoSource_steps_1222": {
+          "id": "f63723ab-1e32-4139-b8e3-122896630d3b",
+          "owner": "user11",
+          "suffix": "1222"
+        },
+        "toDoSource_steps_2222": {
+          "id": "4751537c-c66f-40cb-93fa-d322791f0ca6",
+          "owner": "user21",
+          "suffix": "2222"
+        },
+        "toDoSource_steps_Mod22": {
+          "id": "b9d1d315-2643-4b8a-91f6-df83b5d00ae5",
+          "owner": "irnold4y",
+          "suffix": "Mod22"
+        },
+        "toDoSource_steps_122": {
+          "id": "3fb88e8b-2a08-4b0f-bbdc-a08087049c9e",
+          "owner": "user11",
+          "suffix": "122"
+        },
+        "toDoSource_steps_222": {
+          "id": "dab9310f-368d-4051-9d97-02620ef2fc79",
+          "owner": "user21",
+          "suffix": "222"
+        }
+      }
+    }
+  },
+  "actions": {
+    "CREATE_INSTANCE": {
+      "projectsForUser__project_create": {
+        "const": "CREATE_PROJECT_FOR_PROJECTS_FOR_USER_ACTION_ID",
+        "actionName": "create project for projectsForUser",
+        "userClass": "user",
+        "actionType": "CREATE_INSTANCE",
+        "type": "project",
+        "parentType": "user",
+        "source": "projectsForUser",
+        "id": "f4d95d04-8526-47c3-9413-ef1350f760dc"
+      },
+      "toDoSource__toDo_create": {
+        "const": "CREATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "create toDo for toDoSource",
+        "userClass": "user",
+        "actionType": "CREATE_INSTANCE",
+        "type": "toDo",
+        "parentType": "project",
+        "source": "toDoSource",
+        "id": "1aa91042-60c9-434a-b3cf-d64eb420dd95"
+      },
+      "toDoSource__isCompleted_create": {
+        "const": "CREATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "create isCompleted for toDoSource",
+        "userClass": "user",
+        "actionType": "CREATE_INSTANCE",
+        "type": "isCompleted",
+        "parentType": "toDo",
+        "source": "toDoSource",
+        "id": "818f2fa5-aadf-4c5a-99d9-1313acb29337"
+      },
+      "toDoSource__steps_create": {
+        "const": "CREATE_STEPS_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "create steps for toDoSource",
+        "userClass": "user",
+        "actionType": "CREATE_INSTANCE",
+        "type": "steps",
+        "parentType": "toDo",
+        "source": "toDoSource",
+        "id": "cd7b4bab-a35d-4d6d-9ac8-7915f6087730"
+      }
+    },
+    "UPDATE_INSTANCE": {
+      "projectsForUser__project_update": {
+        "const": "UPDATE_PROJECT_FOR_PROJECTS_FOR_USER_ACTION_ID",
+        "actionName": "update project for projectsForUser",
+        "userClass": "user",
+        "actionType": "UPDATE_INSTANCE",
+        "type": "project",
+        "source": "projectsForUser",
+        "id": "24da762a-bfcf-4562-8fcd-8f84ed6d3390"
+      },
+      "toDoSource__toDo_update": {
+        "const": "UPDATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "update toDo for toDoSource",
+        "userClass": "user",
+        "actionType": "UPDATE_INSTANCE",
+        "type": "toDo",
+        "source": "toDoSource",
+        "id": "72a7e2df-2b14-48bb-b5fd-469ff2305806"
+      },
+      "toDoSource__isCompleted_update": {
+        "const": "UPDATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "update isCompleted for toDoSource",
+        "userClass": "user",
+        "actionType": "UPDATE_INSTANCE",
+        "type": "isCompleted",
+        "source": "toDoSource",
+        "id": "394c29fe-92e3-4116-8988-382850776873"
+      },
+      "toDoSource__steps_update": {
+        "const": "UPDATE_STEPS_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "update steps for toDoSource",
+        "userClass": "user",
+        "actionType": "UPDATE_INSTANCE",
+        "type": "steps",
+        "source": "toDoSource",
+        "id": "05074d33-a5e8-4529-99cc-6e9bf3c33819"
+      }
+    },
+    "DELETE_INSTANCE": {
+      "projectsForUser__project_delete": {
+        "const": "DELETE_PROJECT_FOR_PROJECTS_FOR_USER_ACTION_ID",
+        "actionName": "delete project for projectsForUser",
+        "userClass": "user",
+        "actionType": "DELETE_INSTANCE",
+        "type": "project",
+        "parentType": "user",
+        "source": "projectsForUser",
+        "id": "da26e2c1-9c8e-468b-b947-023287d3b4b6"
+      },
+      "toDoSource__toDo_delete": {
+        "const": "DELETE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "delete toDo for toDoSource",
+        "userClass": "user",
+        "actionType": "DELETE_INSTANCE",
+        "type": "toDo",
+        "parentType": "project",
+        "source": "toDoSource",
+        "id": "4e44ac9f-0659-4938-a9c9-cbdddf394b8f"
+      },
+      "toDoSource__isCompleted_delete": {
+        "const": "DELETE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "delete isCompleted for toDoSource",
+        "userClass": "user",
+        "actionType": "DELETE_INSTANCE",
+        "type": "isCompleted",
+        "parentType": "toDo",
+        "source": "toDoSource",
+        "id": "2b90a361-47c8-4c0b-a9dc-4d9a4b6c39b4"
+      },
+      "toDoSource__steps_delete": {
+        "const": "DELETE_STEPS_FOR_TO_DO_SOURCE_ACTION_ID",
+        "actionName": "delete steps for toDoSource",
+        "userClass": "user",
+        "actionType": "DELETE_INSTANCE",
+        "type": "steps",
+        "parentType": "toDo",
+        "source": "toDoSource",
+        "id": "01a2d409-8ef4-4302-aed5-34ca04cd3e73"
+      }
+    }
+  },
+  "topSource": "projectsForUser",
+  "stack": {
+    "stackId": "us-west-2_2r3HEQutH",
+    "moderator": {
+      "id": "6c542241-4ad4-4efa-90b0-5f61303ce95e",
+      "name": "irnold4y"
+    }
+  }
+}

@@ -1,28 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import CreateStepsForm from '../CreateStepsForm';
-import Steps from '../Steps';
+import CreateStepsForm from '../StepsCreationForm';
+import Step from '../Step';
 
-const StepssStyleWrapper = styled.div``;
+const StepsStyleWrapper = styled.div``;
 
-function Stepss({ stepss, currentTodoId, onUpdate, refetchQueries }) {
+function Steps({ steps, currentTodoId, onUpdate, refetchQueries }) {
   return (
-    <StepssStyleWrapper>
+    <StepsStyleWrapper>
       <CreateStepsForm
         currentTodoId={currentTodoId}
         refetchQueries={refetchQueries}
       />
 
-      {stepss.map(steps => (
-        <Steps
-          key={steps.instance.id}
-          steps={steps.instance}
+      {steps.map(step => (
+        <Step
+          key={step.instance.id}
+          step={step.instance}
           onUpdate={onUpdate}
         />
       ))}
-    </StepssStyleWrapper>
+    </StepsStyleWrapper>
   );
 }
 
-export default Stepss;
+export default Steps;

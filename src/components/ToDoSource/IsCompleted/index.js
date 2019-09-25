@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { graphql } from '@apollo/react-hoc';
 import { EXECUTE_ACTION } from '@nostack/no-stack';
 
-import {UPDATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID} from '../../../config';
-import {IS_COMPLETED_FRAGMENT} from '../../source-props/fragments';
+import { UPDATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID } from '../../../config';
+import { TO_DO_CHILD_FRAGMENT } from '../../source-props/fragments';
 
 // add styling here
 const IsCompletedStyleWrapper = styled.span`
@@ -33,7 +33,7 @@ function IsCompleted({ isCompleted, label, updateInstance, onUpdate, disabled = 
           value,
         }),
       },
-      update: onUpdate(isCompleted.id, IS_COMPLETED_FRAGMENT),
+      update: onUpdate(isCompleted.id, TO_DO_CHILD_FRAGMENT),
     });
   }
 

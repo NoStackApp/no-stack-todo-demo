@@ -21,15 +21,8 @@ export const TO_DO_FRAGMENT = gql`
   }
 `;
 
-export const IS_COMPLETED_FRAGMENT = gql`
-  fragment IsCompletedParts on Instance {
-    id
-    value
-  }
-`;
-
-export const STEPS_FRAGMENT = gql`
-  fragment StepsParts on Instance {
+export const TO_DO_CHILD_FRAGMENT = gql`
+  fragment TodoChildParts on Instance {
     id
     value
   }

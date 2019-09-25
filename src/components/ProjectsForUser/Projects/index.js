@@ -1,7 +1,7 @@
 import React from 'react';
 import { Unit } from '@nostack/no-stack';
 import styled from 'styled-components';
-import flattenData  from '../../../flattenData';
+import { flattenData }  from '../../../flattenData';
 
 import ProjectCreationForm from '../ProjectCreationForm';
 import Project from '../Project';

@@ -15,23 +15,17 @@ export const SOURCE_PROJECTS_FOR_USER_QUERY = gql`
       unitId: $id
       typeRelationships: $typeRelationships
       parameters: $parameters
-    )
-      {
-            id,
-            instance:  {
-                ...ProjectParts
-            },
-            children: [
-            
-    
-            ],
-             __typename: 'InstanceWithTypedChildren',
-        }`
-    
+    ) {
+      id,
+      instance  {
+        ...ProjectParts
+      }
+    }
   }
   
-${PROJECT_FRAGMENT}
+  ${PROJECT_FRAGMENT}
 `;
+
 export const PROJECTS_FOR_USER_RELATIONSHIPS = {
-   [TYPE_PROJECT_ID]: null,
+  [TYPE_PROJECT_ID]: null,
 };

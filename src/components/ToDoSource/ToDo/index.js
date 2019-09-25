@@ -4,7 +4,7 @@ import {EXECUTE_ACTION} from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 import {graphql} from '@apollo/react-hoc';
 
-import {UPDATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID, DELETE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID} from '../../../config';
+import {UPDATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID, DELETE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID, TYPE_IS_COMPLETED_ID, TYPE_STEPS_ID} from '../../../config';
 import {TO_DO_FRAGMENT} from '../../source-props/fragments';
 
 
@@ -45,14 +45,14 @@ const DeleteMenu = styled.div`
 `;
 
 function ToDo({toDo, parentId, updateInstance, deleteInstance, onUpdate, onDelete}) {
-  
-  const isCompleted = toDo.children[0].instances[0];
-  const steps = toDo.children;
   const [toDoValue, updateToDoValue] = useState(toDo.value);
   const [isEditMode, updateIsEditMode] = useState(false);
   const [isSaving, updateIsSaving] = useState(false);
   const [ isDeleteMode, updateIsDeleteMode ] = useState(false);
   const [ isDeleting, updateIsDeleting ] = useState(false);
+
+  const isCompleted = toDo.children.find(child => child.typeId === TYPE_IS_COMPLETED_ID).instances[0];
+  const steps = toDo.children.find(child => child.typeId === TYPE_STEPS_ID).instances;
 
   function handleToDoValueChange(e) {
     updateToDoValue(e.target.value);
@@ -177,18 +177,18 @@ function ToDo({toDo, parentId, updateInstance, deleteInstance, onUpdate, onDelet
             }
 
             
-< IsCompleted
+      <IsCompleted
               isCompleted = { isCompleted }
               toDoId = {toDo.id}
               label="Done?"
               onUpdate={onUpdate}
       />
-< Steps
-              steps = { steps }
-              toDoId = {toDo.id}
-              label="Done?"
-              onUpdate={onUpdate}
-      />
+{/* <Steps */}
+{/*               steps = { steps } */}
+{/*               toDoId = {toDo.id} */}
+{/*               label="Done?" */}
+{/*               onUpdate={onUpdate} */}
+{/*       /> */}
           </>
         )
       }
