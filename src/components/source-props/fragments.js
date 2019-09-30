@@ -23,7 +23,7 @@ export const TO_DO_FRAGMENT = gql`
 
 export const TO_DO_CHILD_FRAGMENT = gql`
   fragment TodoChildParts on Instance {
-    id
-    value
+      id
+      value
   }
 `;

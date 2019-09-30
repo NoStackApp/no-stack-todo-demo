@@ -1,6 +1,7 @@
 import { ApolloClient } from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import { v4 } from 'uuid';
 
 import { createAuthLink, httpLink } from '@nostack/no-stack';
 
@@ -13,6 +14,6 @@ const link = ApolloLink.from([authLink, httpLink]);
 export default new ApolloClient({
   link,
   cache: new InMemoryCache({
-    dataIdFromObject: object => object.id,
+    dataIdFromObject: object => object.id ? object.id + object.__typename : v4(),
   }),
 });

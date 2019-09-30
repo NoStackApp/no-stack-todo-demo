@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
-import { CREATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID, CREATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID } from '../../../config';
+import { CREATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID, CREATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID, TYPE_IS_COMPLETED_ID } from '../../../config';
 
 // change styling here
 const Form = styled.div`
@@ -63,21 +63,24 @@ function ToDoCreationForm({ projectId, createToDo, createIsCompleted, onAdd }) {
         const isCompletedData = JSON.parse(response.data.ExecuteAction);
 
         const newToDo = {
+          id: newToDoData.instanceId,
           instance: {
             id: newToDoData.instanceId,
             value: newToDoData.value,
-            __typename: 'Instance',
+            __typename: 'InstanceWithTypedChildren',
           },
           children: [
               {
+                typeId: TYPE_IS_COMPLETED_ID,
                 instances: [
                   {
-                     instance: {
-                        id: isCompletedData.instanceId,
-                        value: isCompletedData.value,
-                        __typename: 'Instance',
-                     },
-                     __typename: 'InstanceWithTypedChildren',
+                    id: isCompletedData.instanceId,
+                    instance: {
+                      id: isCompletedData.instanceId,
+                      value: isCompletedData.value,
+                      __typename: 'InstanceWithTypedChildren',
+                    },
+                    __typename: 'InstanceWithTypedChildren',
                   },
                 ],
                 __typename: 'TypeWithInstances',
@@ -85,6 +88,8 @@ function ToDoCreationForm({ projectId, createToDo, createIsCompleted, onAdd }) {
           ],
           __typename: 'InstanceWithTypedChildren',
         };
+
+        console.log(newToDo);
 
         onAdd(newToDo)(cache);
       },

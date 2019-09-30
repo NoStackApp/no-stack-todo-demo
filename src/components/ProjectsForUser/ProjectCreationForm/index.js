@@ -38,7 +38,7 @@ function ProjectCreationForm({ userId, createProject, onAdd }) {
 
     const createProjectResponse = await createProject({
       variables: {
-        actionId: CREATE_PROJECT_FOR_PROJECTS_FOR_USER_ACTION_ID ,
+        actionId: CREATE_PROJECT_FOR_PROJECTS_FOR_USER_ACTION_ID,
         executionParameters: JSON.stringify({
           parentInstanceId: userId,
           value: projectValue,

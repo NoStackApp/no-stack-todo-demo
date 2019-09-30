@@ -16,7 +16,7 @@ export const SOURCE_PROJECTS_FOR_USER_QUERY = gql`
       typeRelationships: $typeRelationships
       parameters: $parameters
     ) {
-      id,
+      id
       instance  {
         ...ProjectParts
       }

@@ -28,13 +28,16 @@ function Projects({ userId }) {
       query={SOURCE_PROJECTS_FOR_USER_QUERY}
       parameters={parameters}
     >
-      {({loading, error, data, updateUnitAfterCreateAction, updateUnitAfterUpdateAction, updateUnitAfterDeleteAction}) => {
+      {({loading, error, data, updateUnitAfterCreateAction, updateUnitInstanceAfterUpdateAction, updateUnitAfterDeleteAction}) => {
         if (loading) return 'Loading...';
 
         if (error) {
           console.error(error);
           return `Error: ${error.graphQLErrors}`
         };
+
+        console.log('from projects');
+        console.log(data);
 
         const projects = data.unitData.map(el => flattenData(el));
 
@@ -47,7 +50,7 @@ function Projects({ userId }) {
                   key={project.id}
                   parentId={userId}
                   project={project}
-                  onUpdate={updateUnitAfterUpdateAction}
+                  onUpdate={updateUnitInstanceAfterUpdateAction}
                   onDelete={updateUnitAfterDeleteAction}
                 />
               ))

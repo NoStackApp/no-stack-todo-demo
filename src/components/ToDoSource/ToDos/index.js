@@ -28,13 +28,16 @@ function ToDos({ projectId }) {
       query={SOURCE_TO_DO_SOURCE_QUERY}
       parameters={parameters}
     >
-      {({loading, error, data, updateUnitAfterCreateAction, updateUnitAfterUpdateAction, updateUnitAfterDeleteAction}) => {
+      {({loading, error, data, updateUnitAfterCreateAction, updateUnitInstanceAfterUpdateAction, updateUnitAfterDeleteAction}) => {
         if (loading) return 'Loading...';
 
         if (error) {
           console.error(error);
           return `Error: ${error.graphQLErrors}`
         };
+
+        console.log('from Todos');
+        console.log(data);
 
         const toDos = data.unitData.map(el => flattenData(el));
 
@@ -47,7 +50,7 @@ function ToDos({ projectId }) {
                   key={toDo.id}
                   parentId={projectId}
                   toDo={toDo}
-                  onUpdate={updateUnitAfterUpdateAction}
+                  onUpdate={updateUnitInstanceAfterUpdateAction}
                   onDelete={updateUnitAfterDeleteAction}
                 />
               ))
