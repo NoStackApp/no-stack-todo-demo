@@ -52,7 +52,7 @@ function ToDo({toDo, parentId, updateInstance, deleteInstance, onUpdate, onDelet
   const [ isDeleting, updateIsDeleting ] = useState(false);
 
   const isCompleted = toDo.children.find(child => child.typeId === TYPE_IS_COMPLETED_ID).instances[0];
-  const steps = toDo.children.find(child => child.typeId === TYPE_STEPS_ID).instances;
+  // const steps = toDo.children.find(child => child.typeId === TYPE_STEPS_ID).instances;
 
   function handleToDoValueChange(e) {
     updateToDoValue(e.target.value);

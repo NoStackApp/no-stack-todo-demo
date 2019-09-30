@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from '@apollo/react-hoc';
 import styled from 'styled-components';
-import { withNoStack, EXECUTE_ACTION } from '@nostack/no-stack';
+import { EXECUTE_ACTION } from '@nostack/no-stack';
 import compose from '@shopify/react-compose';
 
 import { CREATE_TO_DO_FOR_TO_DO_SOURCE_ACTION_ID, CREATE_IS_COMPLETED_FOR_TO_DO_SOURCE_ACTION_ID, TYPE_IS_COMPLETED_ID } from '../../../config';
@@ -45,7 +45,6 @@ function ToDoCreationForm({ projectId, createToDo, createIsCompleted, onAdd }) {
         }),
         unrestricted: false,
       },
-      update: onAdd(),
     });
 
     const newToDoData = JSON.parse(createToDoResponse.data.ExecuteAction);
@@ -78,7 +77,7 @@ function ToDoCreationForm({ projectId, createToDo, createIsCompleted, onAdd }) {
                     instance: {
                       id: isCompletedData.instanceId,
                       value: isCompletedData.value,
-                      __typename: 'InstanceWithTypedChildren',
+                      __typename: 'Instance',
                     },
                     __typename: 'InstanceWithTypedChildren',
                   },
@@ -89,6 +88,7 @@ function ToDoCreationForm({ projectId, createToDo, createIsCompleted, onAdd }) {
           __typename: 'InstanceWithTypedChildren',
         };
 
+        console.log('newtodo!');
         console.log(newToDo);
 
         onAdd(newToDo)(cache);
