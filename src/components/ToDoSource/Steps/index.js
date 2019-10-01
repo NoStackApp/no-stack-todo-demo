@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import CreateStepsForm from '../StepsCreationForm';
+import StepCreationForm from '../StepCreationForm';
 import Step from '../Step';
 
 const StepsStyleWrapper = styled.div``;
 
-function Steps({ steps, todoId, onUpdate, onDelete, refetchQueries }) {
+function Steps({ steps, toDoId, onUpdate, onDelete, refetchQueries }) {
   return (
     <StepsStyleWrapper>
-      <CreateStepsForm
-        todoId={todoId}
+      <StepCreationForm
         refetchQueries={refetchQueries}
+        parentId={toDoId}
       />
 
       {steps.map(step => (
@@ -20,7 +20,7 @@ function Steps({ steps, todoId, onUpdate, onDelete, refetchQueries }) {
           step={step}
           onUpdate={onUpdate}
           onDelete={onDelete}
-          parentId={todoId}
+          parentId={toDoId}
         />
       ))}
     </StepsStyleWrapper>

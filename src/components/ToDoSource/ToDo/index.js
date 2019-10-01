@@ -44,7 +44,7 @@ const DeleteMenu = styled.div`
   border: 1px solid #eeeeee;
 `;
 
-function ToDo({toDo, parentId, updateInstance, deleteInstance, onUpdate, onDelete}) {
+function ToDo({toDo, parentId, updateInstance, deleteInstance, onUpdate, onDelete, refetchQueries}) {
   const [toDoValue, updateToDoValue] = useState(toDo.value);
   const [isEditMode, updateIsEditMode] = useState(false);
   const [isSaving, updateIsSaving] = useState(false);
@@ -183,7 +183,7 @@ function ToDo({toDo, parentId, updateInstance, deleteInstance, onUpdate, onDelet
               label="Done?"
               onUpdate={onUpdate}
       />
-      <Steps steps={steps} toDoId={toDo.id} onUpdate={onUpdate} onDelete={onDelete} />
+      <Steps steps={steps} toDoId={toDo.id} onUpdate={onUpdate} onDelete={onDelete} refetchQueries={refetchQueries}/>
           </>
         )
       }

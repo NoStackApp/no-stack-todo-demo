@@ -28,7 +28,7 @@ function ToDos({ projectId }) {
       query={SOURCE_TO_DO_SOURCE_QUERY}
       parameters={parameters}
     >
-      {({loading, error, data, updateUnitAfterCreateAction, updateUnitInstanceAfterUpdateAction, updateUnitAfterDeleteAction}) => {
+      {({loading, error, data, updateUnitAfterCreateAction, updateUnitInstanceAfterUpdateAction, updateUnitAfterDeleteAction, refetchQueries}) => {
         if (loading) return 'Loading...';
 
         if (error) {
@@ -49,6 +49,7 @@ function ToDos({ projectId }) {
                   toDo={toDo}
                   onUpdate={updateUnitInstanceAfterUpdateAction}
                   onDelete={updateUnitAfterDeleteAction}
+                  refetchQueries={refetchQueries}
                 />
               ))
             }

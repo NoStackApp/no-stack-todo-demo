@@ -19,40 +19,36 @@ const Button = styled.button`
   margin-left: 1em;
 `;
 
-function StepsCreationForm({ toDoId, createSteps, onAdd }) {
-  const [ stepsValue, updateStepsValue ] = useState('');
+function StepCreationForm({ parentId, createStep, refetchQueries }) {
+  const [ stepValue, updateStepValue ] = useState('');
   const [ loading, updateLoading ] = useState(false);
 
   function handleChange(e) {
-    updateStepsValue(e.target.value);
+    updateStepValue(e.target.value);
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!stepsValue) {
+    if (!stepValue) {
       return;
     }
 
     updateLoading(true);
 
-    const createStepsResponse = await createSteps({
+    const createStepResponse = await createStep({
       variables: {
-        actionId: CREATE_STEPS_FOR_TO_DO_SOURCE_ACTION_ID ,
+        actionId: CREATE_STEPS_FOR_TO_DO_SOURCE_ACTION_ID,
         executionParameters: JSON.stringify({
-          parentInstanceId: toDoId,
-          value: stepsValue,
+          parentInstanceId: parentId,
+          value: stepValue,
         }),
         unrestricted: false,
       },
-      update: onAdd(),
+      refetchQueries
     });
 
-    const newStepsData = JSON.parse(createStepsResponse.data.ExecuteAction);
-
-    
-
-    updateStepsValue('');
+    updateStepValue('');
     updateLoading(false);
   }
 
@@ -67,19 +63,19 @@ function StepsCreationForm({ toDoId, createSteps, onAdd }) {
       <label htmlFor="steps-value">
         Steps:
         <input
-          id="steps-value"
+          id="step-value"
           type="text"
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          value={stepsValue}
+          value={stepValue}
           disabled={loading}
         />
       </label>
       <Button type="submit"  disabled={loading}  onClick={handleSubmit}>
         {
           loading
-            ? 'Creating Steps...'
-            : 'Create Steps'
+            ? 'Creating Step...'
+            : 'Create Step'
         }
       </Button>
     </Form>
@@ -87,5 +83,5 @@ function StepsCreationForm({ toDoId, createSteps, onAdd }) {
 }
 
 export default compose(
-  graphql(EXECUTE_ACTION, { name: 'createSteps' }),
-)(StepsCreationForm);
+  graphql(EXECUTE_ACTION, { name: 'createStep' }),
+)(StepCreationForm);
