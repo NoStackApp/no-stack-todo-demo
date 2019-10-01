@@ -6,19 +6,21 @@ import Step from '../Step';
 
 const StepsStyleWrapper = styled.div``;
 
-function Steps({ steps, currentTodoId, onUpdate, refetchQueries }) {
+function Steps({ steps, todoId, onUpdate, onDelete, refetchQueries }) {
   return (
     <StepsStyleWrapper>
       <CreateStepsForm
-        currentTodoId={currentTodoId}
+        todoId={todoId}
         refetchQueries={refetchQueries}
       />
 
       {steps.map(step => (
         <Step
-          key={step.instance.id}
-          step={step.instance}
+          key={step.id}
+          step={step}
           onUpdate={onUpdate}
+          onDelete={onDelete}
+          parentId={todoId}
         />
       ))}
     </StepsStyleWrapper>

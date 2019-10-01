@@ -36,9 +36,6 @@ function ToDos({ projectId }) {
           return `Error: ${error.graphQLErrors}`
         };
 
-        console.log('from Todos');
-        console.log(data);
-
         const toDos = data.unitData.map(el => flattenData(el));
 
         return (

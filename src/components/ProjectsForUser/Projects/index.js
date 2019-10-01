@@ -36,9 +36,6 @@ function Projects({ userId }) {
           return `Error: ${error.graphQLErrors}`
         };
 
-        console.log('from projects');
-        console.log(data);
-
         const projects = data.unitData.map(el => flattenData(el));
 
         return (

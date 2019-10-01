@@ -88,9 +88,6 @@ function ToDoCreationForm({ projectId, createToDo, createIsCompleted, onAdd }) {
           __typename: 'InstanceWithTypedChildren',
         };
 
-        console.log('newtodo!');
-        console.log(newToDo);
-
         onAdd(newToDo)(cache);
       },
     });
