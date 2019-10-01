@@ -183,7 +183,7 @@ function ToDo({toDo, parentId, updateInstance, deleteInstance, onUpdate, onDelet
               label="Done?"
               onUpdate={onUpdate}
       />
-      <Steps steps={steps} toDoId={toDo.id} onUpdate={onUpdate} onDelete={onDelete} refetchQueries={refetchQueries}/>
+      <Steps steps={steps} toDoId={toDo.id} onUpdate={onUpdate} refetchQueries={refetchQueries}/>
           </>
         )
       }

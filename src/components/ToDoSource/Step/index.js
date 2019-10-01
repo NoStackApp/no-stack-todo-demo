@@ -29,7 +29,7 @@ const DeleteMenu = styled.div`
   border: 1px solid #eeeeee;
 `;
 
-function Step({ step, updateInstance, onUpdate, deleteInstance, onDelete, parentId }) {
+function Step({ step, updateInstance, onUpdate, deleteInstance, refetchQueries, parentId }) {
   const [stepValue, updateStepValue] = useState(step.value);
   const [isEditMode, updateIsEditMode] = useState(false);
   const [isSaving, updateIsSaving] = useState(false);
@@ -70,7 +70,7 @@ function Step({ step, updateInstance, onUpdate, deleteInstance, onDelete, parent
             instanceId: step.id,
           }),
         },
-        update: onDelete(step.id),
+        refetchQueries,
       });
     } catch (e) {
       updateIsDeleting(false);

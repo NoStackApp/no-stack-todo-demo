@@ -6,7 +6,7 @@ import Step from '../Step';
 
 const StepsStyleWrapper = styled.div``;
 
-function Steps({ steps, toDoId, onUpdate, onDelete, refetchQueries }) {
+function Steps({ steps, toDoId, onUpdate, refetchQueries }) {
   return (
     <StepsStyleWrapper>
       <StepCreationForm
@@ -19,8 +19,8 @@ function Steps({ steps, toDoId, onUpdate, onDelete, refetchQueries }) {
           key={step.id}
           step={step}
           onUpdate={onUpdate}
-          onDelete={onDelete}
           parentId={toDoId}
+          refetchQueries={refetchQueries}
         />
       ))}
     </StepsStyleWrapper>
